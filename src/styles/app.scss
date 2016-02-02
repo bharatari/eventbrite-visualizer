@@ -1,0 +1,206 @@
+/**
+ *
+ * EventbriteVisualizer CSS
+ *
+ * Uses an edited version of the Bootswatch Cosmo theme, using Open Sans
+ * instead of Source Sans Pro.
+ *
+ * @project - EventbriteVisualizer
+ * @author - Bharat Arimilli
+ * @copyright - 2015
+ * @license - Copyright Bharat Arimilli
+ * @dependencies - Bootswatch Cosmo v3.3.5
+ *
+ * @contents - Table of Contents
+ *
+ * 1. Structure
+ * 2. Controls
+ * 3. General
+ * 4. Animations
+ * 5. Media Queries
+ *
+ */
+
+:global {
+  @import 'vendor/css/bootstrap.min.css';
+  @import 'vendor/css/ionicons.min.css';
+
+  /**
+  *
+  * @section - 1. Structure
+  *
+  */
+
+  .page-background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(270deg,#42b76c 10%,#207977 90%);
+  }
+
+  .container-margin {
+    margin-bottom: 20px;
+  }
+
+  .main-box {
+    margin-top: 37vh;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /**
+  *
+  * @section - 2. Controls
+  *
+  */
+
+  .form-control {
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+    border: 1px solid white;
+    -webkit-box-shadow: none;
+  }
+
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: white !important;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: white !important;
+    opacity: 1;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: white !important;
+    opacity: 1 !important;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white !important;
+  }
+  :placeholder-shown { /* Standard */
+    color: white !important;
+  }
+
+  .form-zoom {
+    -webkit-transition: transform 0.2s ease-out;
+    -moz-transition: transform 0.2s ease-out;
+    -ms-transition: transform 0.2s ease-out;
+    -o-transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+  }
+
+  .form-zoom:focus {
+    transform: scale(1.05);
+  }
+
+  .select-container {
+    text-align: center;
+    display: inline;
+    margin-bottom: 5px;
+  }
+
+  .select {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-family: 'Open Sans';
+    font-size: 24px;
+  }
+
+  .select-option {
+    color: black;
+  }
+
+  /**
+  *
+  * @section - 3. General
+  *
+  */
+
+  .brand {
+    font-family: 'Open Sans';
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+
+  .description {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-weight: 300;
+  }
+
+  .description-inline {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-weight: 300;
+    display: inline;
+  }
+
+  .canvas {
+    width: 100%;
+  }
+
+  /**
+  *
+  * @section - 4. Animations
+  *
+  */
+
+  .page-enter {
+    opacity: 0.01;
+  }
+
+  .page-enter-active {
+    opacity: 1;
+    -webkit-transition: opacity 0.5s ease-in;
+    -moz-transition: opacity 0.5s ease-in;
+    -ms-transition: opacity 0.5s ease-in;
+    -o-transition: opacity 0.5s ease-in;
+    transition: opacity 0.5s ease-in, transform 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  }
+
+  .page-leave {
+    opacity: 1;
+  }
+
+  .page-leave-active {
+    opacity: 0.01;
+    -webkit-transition: opacity 0.5s ease-out;
+    -moz-transition: opacity 0.5s ease-out;
+    -ms-transition: opacity 0.5s ease-out;
+    -o-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.600, -0.280, 0.735, 0.045);
+  }
+
+  /**
+  *
+  * @section - 5. Media Queries
+  *
+  */
+
+  @media only screen and (max-width: 1530px) {
+
+  }
+
+  @media only screen and (max-width: 991px) {
+
+  }
+
+  @media only screen and (max-width: 768px) {
+
+  }
+}
