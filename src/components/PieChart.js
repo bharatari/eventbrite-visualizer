@@ -22,12 +22,12 @@ export default class PieChart extends React.Component {
   };
   static propTypes = {
     data: PropTypes.array.isRequired,
-    propertyFunction: PropTypes.func.isRequired,
+    viewBy: PropTypes.string.isRequired,
   };
   componentDidMount() {
     if (this.props.data) {
       const data = ChartUtils.processPie(
-        ChartUtils.process(this.props.data, this.props.propertyFunction)
+        ChartUtils.process(this.props.data, this.props.viewBy)
       );
       this.setState({
         data
@@ -36,7 +36,7 @@ export default class PieChart extends React.Component {
   }
   componentWillReceiveProps(nextProps) {
     const data = ChartUtils.processPie(
-      ChartUtils.process(nextProps.data, nextProps.propertyFunction)
+      ChartUtils.process(nextProps.data, nextProps.viewBy)
     );
     this.setState({
       data: data,

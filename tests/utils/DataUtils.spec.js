@@ -38,4 +38,45 @@ describe('DataUtils', function () {
       assert.ok(true);
     });
   });
+  describe('#getProperty', function () {
+    it('should return nested properties', function () {
+      const object = {
+        nest: {
+          something: {
+            here: 'hello'
+          }
+        }
+      };
+      const expected = 'hello';
+      const result = DataUtils.getProperty(object, 'nest.something.here');
+      assert.equal(result, expected);
+    });
+    it('should return null if property does not exist', function () {
+      const object = {
+        nest: {
+          something: {}
+        }
+      };
+      const expected = null;
+      const result = DataUtils.getProperty(object, 'nest.something.here');
+      assert.equal(result, expected);
+    });
+    it('should return null if property does not have nested property', function () {
+      const object = {
+        nest: {
+          something: 'hello'
+        }
+      };
+      const expected = null;
+      const result = DataUtils.getProperty(object, 'nest.something.here');
+      assert.equal(result, expected);
+    });
+  });
+  describe('#getViewByProperty', function () {
+    it('should get viewBy property', function () {
+      const expected = 'venue.address.country';
+      const result = DataUtils.getViewByProperty('country');
+      assert.equal(result, expected);
+    });
+  })
 });

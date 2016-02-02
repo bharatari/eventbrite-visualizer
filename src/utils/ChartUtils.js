@@ -54,16 +54,16 @@ export default {
    * a label.
    *
    * @param {Array} events - Array of events.
-   * @param {Function} propertyFunction - Function that returns a value from Eventbrite event object.
+   * @param {string} viewBy - The user's chosen viewBy property.
    * @return {Array}
    */
-  process(events, propertyFunction) {
+  process(events, viewBy) {
     if (events) {
       let data = [];
 
       for (let i = 0; i < events.length; i++) {
         if (events[i]) {
-          const label = propertyFunction(events[i]);
+          const label = DataUtils.getProperty(events[i] , DataUtils.getViewByProperty(viewBy));
 
           if (label) {
             if (DataUtils.exists(data, label)) {

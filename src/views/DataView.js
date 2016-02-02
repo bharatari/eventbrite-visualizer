@@ -4,9 +4,6 @@ import { viewByTypes, graphTypes } from '../constants/Values';
 import { BarChart, PieChart, Select } from '../components';
 
 export default class DataView extends React.Component {
-  state = {
-    propertyFunction: DataUtils.getCountry
-  };
   componentWillMount() {
     this.props.actions.fetchEvents(this.props.query.q);
   }
@@ -16,12 +13,6 @@ export default class DataView extends React.Component {
   handleGraphChange = (event) => {
     this.props.actions.changeGraph(event.target.value);
   };
-  componentWillReceiveProps(nextProps) {
-    const propertyFunction = DataUtils.getPropertyFunction(nextProps.viewBy);
-    this.setState({
-      propertyFunction
-    });
-  }
   render() {
     let graph = () => {
       if (this.props.requestingEvents) {
@@ -32,9 +23,9 @@ export default class DataView extends React.Component {
         );
       } else {
         if (this.props.graph === 'bar') {
-          return <BarChart data={this.props.events} propertyFunction={this.state.propertyFunction} />;
+          return <BarChart data={this.props.events} viewBy={this.props.viewBy} />;
         } else {
-          return <PieChart data={this.props.events} propertyFunction={this.state.propertyFunction} />;
+          return <PieChart data={this.props.events} viewBy={this.props.viewBy} />;
         }
       }
     };
