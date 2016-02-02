@@ -59,7 +59,6 @@ export default {
     }
     return '';
   },
-  // getTicketClasses
   getPropertyFunction(viewBy) {
     if (viewBy === 'country') {
       return this.getCountry;

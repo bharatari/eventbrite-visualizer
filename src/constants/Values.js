@@ -3,7 +3,6 @@ export const viewByTypes = [
   { value: 'capacity', label: 'Capacity' },
   { value: 'category', label: 'Category' },
   { value: 'format', label: 'Format' },
-  { value: 'tickets', label: 'Tickets' },
 ];
 
 export const graphTypes = [
