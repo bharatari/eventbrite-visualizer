@@ -5,8 +5,8 @@ export default {
   base: 'https://www.eventbriteapi.com/v3',
   options: {
     headers: {
-      'Authorization': 'Bearer ' + eventbriteToken,
-    }
+      Authorization: 'Bearer ' + eventbriteToken,
+    },
   },
   search(keyword) {
     const url = this.base + '/events/search/' +
@@ -59,7 +59,7 @@ export default {
     }
     return '';
   },
-  //getTicketClasses
+  // getTicketClasses
   getPropertyFunction(viewBy) {
     if (viewBy === 'country') {
       return this.getCountry;
@@ -87,5 +87,5 @@ export default {
       });
     }
     return null;
-  }
-}
+  },
+};
