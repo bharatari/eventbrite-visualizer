@@ -18,7 +18,7 @@ class PageTransition extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  currentUrl: state.router.location.pathname
+  currentUrl: state.router.location.pathname,
 });
 
 export default connect(mapStateToProps)(PageTransition);

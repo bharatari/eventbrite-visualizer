@@ -17,12 +17,12 @@ export default class PieChart extends React.Component {
       tooltipTitleFontFamily: "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
       tooltipTitleFontSize: 14,
       tooltipTitleFontStyle: 'bold',
-      tooltipTitleFontColor: 'white'
-    }
+      tooltipTitleFontColor: 'white',
+    },
   };
   static propTypes = {
     data: PropTypes.array.isRequired,
-    propertyFunction: PropTypes.func.isRequired
+    propertyFunction: PropTypes.func.isRequired,
   };
   componentDidMount() {
     if (this.props.data) {
