@@ -8,6 +8,13 @@ export default {
       Authorization: 'Bearer ' + eventbriteToken,
     },
   },
+
+  /**
+   * Fetches events from Eventbrite API.
+   *
+   * @param {string} keyword - Keyword to search events.
+   * @return {Promise}
+   */
   search(keyword) {
     const url = this.base + '/events/search/' +
       '?q=' + keyword +
@@ -19,6 +26,13 @@ export default {
         return response.json();
       });
   },
+
+  /**
+   * Gets country from Eventbrite event.
+   *
+   * @param {Object} event - Eventbrite event object.
+   * @return {string}
+   */
   getCountry(event) {
     if (event) {
       if (event.venue) {
@@ -31,6 +45,13 @@ export default {
     }
     return '';
   },
+
+  /**
+   * Gets capacity from Eventbrite event.
+   *
+   * @param {Object} event - Eventbrite event object.
+   * @return {number}
+   */
   getCapacity(event) {
     if (event) {
       if (event.capacity) {
@@ -39,6 +60,13 @@ export default {
     }
     return 0;
   },
+
+  /**
+   * Gets category from Eventbrite event.
+   *
+   * @param {Object} event - Eventbrite event object.
+   * @return {string}
+   */
   getCategory(event) {
     if (event) {
       if (event.category) {
@@ -49,6 +77,13 @@ export default {
     }
     return '';
   },
+
+  /**
+   * Gets format from Eventbrite event.
+   *
+   * @param {Object} event - Eventbrite event object.
+   * @return {string}
+   */
   getFormat(event) {
     if (event) {
       if (event.format) {
@@ -59,6 +94,14 @@ export default {
     }
     return '';
   },
+
+  /**
+   * Returns the function that returns the specified type of data
+   * from an Eventbrite event object.
+   *
+   * @param {string} viewBy - Type of data user chooses to view.
+   * @return {Function} - The function that returns that data from Eventbrite event object.
+   */
   getPropertyFunction(viewBy) {
     if (viewBy === 'country') {
       return this.getCountry;
@@ -72,6 +115,14 @@ export default {
       return this.getCountry;
     }
   },
+
+  /**
+   * Checks whether the label already exists in array.
+   *
+   * @param {Array} data - Array of objects with data and label keys.
+   * @param {string} label - The label to look for.
+   * @return {boolean}
+   */
   exists(data, label) {
     if (data && label) {
       const labels = _.pluck(data, 'label');
@@ -79,6 +130,14 @@ export default {
     }
     return false;
   },
+
+  /**
+   * Finds label by index.
+   *
+   * @param {Array} data - Array of objects with data and label keys.
+   * @param {string} label - The label to look for.
+   * @return {number}
+   */
   find(data, label) {
     if (data && label) {
       return _.findIndex(data, function (o) {

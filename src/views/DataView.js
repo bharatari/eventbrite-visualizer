@@ -37,8 +37,8 @@ export default class DataView extends React.Component {
           return <PieChart data={this.props.events} propertyFunction={this.state.propertyFunction} />;
         }
       }
-      
     };
+
     return (
       <div className="page-background">
         <div className="container col-sm-8 col-sm-offset-2">

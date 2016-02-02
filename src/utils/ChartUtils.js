@@ -4,6 +4,12 @@ import Chance from 'chance';
 const chance = new Chance();
 
 export default {
+  /**
+   * Processes array and formats it for Chart.js bar chart.
+   *
+   * @param {Array} data - Array of objects with label and data keys.
+   * @return {Array}
+   */
   processBar(data) {
     let allData = {
       labels: [],
@@ -25,6 +31,13 @@ export default {
 
     return allData;
   },
+
+  /**
+   * Processes array and formats it for Chart.js pie chart.
+   *
+   * @param {Array} data - Array of objects with label and data keys.
+   * @return {Array}
+   */
   processPie(data) {
     for (let i = 0; i < data.length; i++) {
       data[i].value = data[i].data;
@@ -34,6 +47,16 @@ export default {
 
     return data;
   },
+
+  /**
+   * Processes array of events and converts it to an array of
+   * objects with label and data keys based on a function that returns
+   * a label.
+   *
+   * @param {Array} events - Array of events.
+   * @param {Function} propertyFunction - Function that returns a value from Eventbrite event object.
+   * @return {Array}
+   */
   process(events, propertyFunction) {
     if (events) {
       let data = [];
@@ -44,6 +67,7 @@ export default {
 
           if (label) {
             if (DataUtils.exists(data, label)) {
+              // If the label already exists, just increment its data key
               const index = DataUtils.find(data, label);
               data[index].data++;
             } else {
@@ -53,7 +77,6 @@ export default {
               });
             }
           }
-
         }
       }
 
