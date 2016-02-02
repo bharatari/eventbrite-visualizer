@@ -43,6 +43,7 @@ export default {
         }
       }
     }
+
     return '';
   },
 
@@ -58,6 +59,7 @@ export default {
         return event.capacity;
       }
     }
+
     return 0;
   },
 
@@ -75,6 +77,7 @@ export default {
         }
       }
     }
+
     return '';
   },
 
@@ -92,6 +95,7 @@ export default {
         }
       }
     }
+
     return '';
   },
 
@@ -128,6 +132,7 @@ export default {
       const labels = _.pluck(data, 'label');
       return _.includes(labels, label);
     }
+
     return false;
   },
 
