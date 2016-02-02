@@ -1,6 +1,7 @@
 {
   "name": "eventbrite-visualizer",
   "version": "0.0.0",
+  "description": "A simple web app built on React and Redux that visualizes popular events from the Eventbrite API.",
   "main": "index.js",
   "engines": {
     "node": ">=4.2.0",
@@ -41,6 +42,12 @@
         "NODE_ENV": "test"
       }
     }
+  },
+  "author": "Bharat Arimilli",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bharatari/eventbrite-visualizer.git"
   },
   "dependencies": {
     "babel-polyfill": "^6.3.14",
