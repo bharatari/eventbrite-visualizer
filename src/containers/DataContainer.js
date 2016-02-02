@@ -19,6 +19,7 @@ const mapStateToProps = (state) => ({
   events: state.event.events,
   viewBy: state.user.viewBy,
   graph: state.user.graph,
+  requestingEvents: state.event.requestingEvents,
 });
 
 const ActionCreators = {

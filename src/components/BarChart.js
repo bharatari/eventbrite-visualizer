@@ -47,7 +47,7 @@ export default class BarChart extends React.Component {
     if (this.state.data) {
       content = <Bar className="canvas" data={this.state.data} options={this.state.options} />
     } else {
-      content = 'Loading...';
+      content = null;
     }
     return (
       <div>

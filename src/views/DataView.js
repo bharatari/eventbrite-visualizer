@@ -24,11 +24,20 @@ export default class DataView extends React.Component {
   }
   render() {
     let graph = () => {
-      if (this.props.graph === 'bar') {
-        return <BarChart data={this.props.events} propertyFunction={this.state.propertyFunction} />;
+      if (this.props.requestingEvents) {
+        return (
+          <div className="col-md-4 col-md-offset-4">
+            <h3 className="loading">Loading...</h3>
+          </div>
+        );
       } else {
-        return <PieChart data={this.props.events} propertyFunction={this.state.propertyFunction} />;
+        if (this.props.graph === 'bar') {
+          return <BarChart data={this.props.events} propertyFunction={this.state.propertyFunction} />;
+        } else {
+          return <PieChart data={this.props.events} propertyFunction={this.state.propertyFunction} />;
+        }
       }
+      
     };
     return (
       <div className="page-background">
